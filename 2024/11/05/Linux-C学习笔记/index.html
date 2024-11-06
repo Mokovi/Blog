@@ -7,7 +7,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/img/user.jpg">
 <meta property="article:published_time" content="2024-11-05T11:33:22.000Z">
-<meta property="article:modified_time" content="2024-11-06T15:42:56.160Z">
+<meta property="article:modified_time" content="2024-11-06T15:46:17.027Z">
 <meta property="article:author" content="MegaV">
 <meta property="article:tag" content="Linux, C">
 <meta name="twitter:card" content="summary">
@@ -146,9 +146,9 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-11-06 23:42:56',
+  postUpdate: '2024-11-06 23:46:17',
   isShuoshuo: false
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MegaV的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Linux C学习笔记</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Linux C学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-05T11:33:22.000Z" title="Created 2024-11-05 19:33:22">2024-11-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-06T15:42:56.160Z" title="Updated 2024-11-06 23:42:56">2024-11-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="零碎知识小结"><a href="#零碎知识小结" class="headerlink" title="零碎知识小结"></a>零碎知识小结</h1><h2 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h2><p>GCC（GNU Compiler Collection，GNU编译器集合）是一个广泛使用的开源编译器套件，支持多种编程语言，最初仅支持C语言，后来逐渐扩展支持C++、Fortran、Ada、Go、Objective-C、D等语言。作为GNU计划的一部分，GCC旨在为各种平台提供自由和开源的编译工具。</p>
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MegaV的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Linux C学习笔记</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Linux C学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-05T11:33:22.000Z" title="Created 2024-11-05 19:33:22">2024-11-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-06T15:46:17.027Z" title="Updated 2024-11-06 23:46:17">2024-11-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="零碎知识小结"><a href="#零碎知识小结" class="headerlink" title="零碎知识小结"></a>零碎知识小结</h1><h2 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h2><p>GCC（GNU Compiler Collection，GNU编译器集合）是一个广泛使用的开源编译器套件，支持多种编程语言，最初仅支持C语言，后来逐渐扩展支持C++、Fortran、Ada、Go、Objective-C、D等语言。作为GNU计划的一部分，GCC旨在为各种平台提供自由和开源的编译工具。</p>
 <h3 id="GCC的编译过程"><a href="#GCC的编译过程" class="headerlink" title="GCC的编译过程"></a>GCC的编译过程</h3><p>程序的编译过程可以分为四个主要阶段：</p>
 <ol>
 <li><p><strong>预编译</strong>：该阶段进行宏替换、删除注释、头文件包含以及条件编译等操作，生成一个预处理文件（<code>.i</code>）。</p>
@@ -617,8 +617,8 @@
 </ol>
 <p><strong>总结</strong></p>
 <ul>
-<li>**<code>fork()</code>**：子进程和父进程在创建时拥有独立的内存空间，虽然初始状态下看起来共享，但修改时内存会被复制，属于“写时拷贝”。</li>
-<li>**<code>vfork()</code>**：子进程在调用 <code>exec()</code> 或 <code>exit()</code> 之前，和父进程共享同一个内存空间，使用时要小心，防止子进程修改父进程的数据。</li>
+<li><code>fork()</code>：子进程和父进程在创建时拥有独立的内存空间，虽然初始状态下看起来共享，但修改时内存会被复制，属于“写时拷贝”。</li>
+<li><code>vfork()</code>：子进程在调用 <code>exec()</code> 或 <code>exit()</code> 之前，和父进程共享同一个内存空间，使用时要小心，防止子进程修改父进程的数据。</li>
 </ul>
 <h2 id="进程的替换exec"><a href="#进程的替换exec" class="headerlink" title="进程的替换exec"></a><strong>进程的替换exec</strong></h2><p>exec函数族，是由六个exec函数组成的。 </p>
 <ul>
@@ -676,7 +676,7 @@
 <ol>
 <li><p><strong>执行方式</strong></p>
 <ul>
-<li><p>**<code>system()</code>**：</p>
+<li><p><code>system()</code>：</p>
 <ul>
 <li><code>system()</code> 会调用一个 shell 来执行指定的命令。它首先创建一个新的子进程，然后在该子进程中执行 shell 命令。执行完命令后，子进程会终止，父进程会等待子进程结束并返回其退出状态。</li>
 <li><code>system()</code> 函数会阻塞父进程的执行，直到命令执行完毕。<ul>
@@ -685,7 +685,7 @@
 </li>
 </ul>
 </li>
-<li><p>**<code>exec()</code>**：</p>
+<li><p><code>exec()</code>：</p>
 <ul>
 <li><p><code>exec()</code> 系列函数不调用 shell，而是直接用指定的程序替换当前进程的映像。这意味着调用 <code>exec()</code> 后，当前进程的代码和数据会被新程序的代码和数据替代，不再返回到调用 <code>exec()</code> 的代码中。</p>
 </li>
@@ -699,13 +699,13 @@
 </li>
 <li><p><strong>进程关系</strong></p>
 <ul>
-<li><p>**<code>system()</code>**：</p>
+<li><p><code>system()</code>：</p>
 <ul>
 <li><code>system()</code> 创建一个新的子进程执行命令，而父进程保持不变。子进程完成后，父进程会继续执行原来的代码。</li>
 <li>父进程和子进程之间没有共享数据，子进程完成任务后就会退出。</li>
 </ul>
 </li>
-<li><p>**<code>exec()</code>**：</p>
+<li><p><code>exec()</code>：</p>
 <ul>
 <li><code>exec()</code> 不创建子进程，而是用新程序替换当前进程。调用 <code>exec()</code> 的进程会直接被新程序替代，不再返回。由于没有创建新进程，因此调用 <code>exec()</code> 后，当前进程的进程 ID 不变，但执行的代码已经是新程序的内容。</li>
 </ul>
@@ -714,13 +714,13 @@
 </li>
 <li><p><strong>使用场景</strong></p>
 <ul>
-<li><p>**<code>system()</code>**：</p>
+<li><p><code>system()</code>：</p>
 <ul>
 <li>适合简单地调用外部命令或脚本，且希望父进程在子进程执行完毕后继续执行的场景。</li>
 <li>例如：在程序中调用 shell 脚本或系统命令，并等待其完成后继续执行后续代码。</li>
 </ul>
 </li>
-<li><p>**<code>exec()</code>**：</p>
+<li><p><code>exec()</code>：</p>
 <ul>
 <li>适合用当前进程执行另一个程序的场景，特别是当你不再需要执行当前进程的代码时。</li>
 <li>常见用法是在 <code>fork()</code> 之后调用 <code>exec()</code>，子进程调用 <code>exec()</code> 来执行新程序，而父进程继续执行其他任务。</li>
@@ -730,12 +730,12 @@
 </li>
 <li><p><strong>返回行为</strong></p>
 <ul>
-<li><p>**<code>system()</code>**：</p>
+<li><p><code>system()</code>：</p>
 <ul>
 <li><code>system()</code> 执行完命令后会返回，返回值是命令的退出状态，因此父进程可以检查命令的执行结果。</li>
 </ul>
 </li>
-<li><p>**<code>exec()</code>**：</p>
+<li><p><code>exec()</code>：</p>
 <ul>
 <li><code>exec()</code> 函数不会返回，除非发生错误。如果执行成功，当前进程被新程序替换；如果失败，<code>exec()</code> 会返回 -1，并设置 <code>errno</code> 以指示错误原因。</li>
 </ul>
@@ -745,8 +745,8 @@
 </ol>
 <p><strong>总结</strong></p>
 <ul>
-<li>**<code>system()</code>**：在子进程中执行外部命令，父进程等待子进程完成并返回退出状态。适合简单的命令执行场景。</li>
-<li>**<code>exec()</code>**：用新程序替换当前进程，不会返回。适合需要完全替换当前进程执行另一个程序的场景。</li>
+<li><code>system()</code>：在子进程中执行外部命令，父进程等待子进程完成并返回退出状态。适合简单的命令执行场景。</li>
+<li><code>exec()</code>：用新程序替换当前进程，不会返回。适合需要完全替换当前进程执行另一个程序的场景。</li>
 </ul>
 <p>如果你的任务是执行一个命令并继续当前程序的运行，使用 <code>system()</code> 更方便；如果你需要完全替换当前进程为另一个程序，使用 <code>exec()</code> 是更好的选择。</p>
 </article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">MegaV</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/11/05/Linux-C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2024/11/05/Linux-C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux-C/">Linux, C</a></div><div class="post-share"><div class="social-share" data-image="/img/user.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/11/04/hello-world/" title="Hello hexo"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Hello hexo</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1234$ hexo serveror$ hexo s  More info: Server Generate static files123$ hexo generateor$ hexo g  More info: Generating Deploy to remote sites123$ hexo deployor$ hexo d  More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/user.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">MegaV</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Mokovi" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:m1447687747@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">零碎知识小结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GCC"><span class="toc-number">1.1.</span> <span class="toc-text">GCC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GCC%E7%9A%84%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">GCC的编译过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GCC%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">GCC的使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GCC%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">GCC的主要特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POSIX%E6%A0%87%E5%87%86"><span class="toc-number">1.2.</span> <span class="toc-text">POSIX标准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">进程概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.</span> <span class="toc-text">进程的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%B0%83%E5%BA%A6%E8%BF%9B%E5%88%B6%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">进程的调度进制：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E8%B0%83%E5%BA%A6%EF%BC%88Round-Robin-Scheduling%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">时间片轮转调度（Round Robin Scheduling）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6%EF%BC%88Priority-Scheduling%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">优先级调度（Priority Scheduling）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%85%AC%E5%B9%B3%E8%B0%83%E5%BA%A6%EF%BC%88CFS%EF%BC%8CCompletely-Fair-Scheduling%EF%BC%89"><span class="toc-number">2.2.3.</span> <span class="toc-text">完全公平调度（CFS，Completely Fair Scheduling）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CFS%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">CFS实例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%9D%97"><span class="toc-number">2.3.</span> <span class="toc-text">进程控制块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">进程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%8F%B7"><span class="toc-number">3.1.</span> <span class="toc-text">进程号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BAfork%E5%87%BD%E6%95%B0"><span class="toc-number">3.2.</span> <span class="toc-text">进程的创建fork函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%8C%BA%E5%9F%9F%E5%88%92%E5%88%86"><span class="toc-number">3.3.</span> <span class="toc-text">程序区域划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%90%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.4.</span> <span class="toc-text">创建子进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8Bsleep-%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81"><span class="toc-number">3.5.</span> <span class="toc-text">进程sleep 睡眠状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%AD%89%E5%BE%85wait%E5%87%BD%E6%95%B0"><span class="toc-number">3.6.</span> <span class="toc-text">进程的等待wait函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#waitpid%E5%87%BD%E6%95%B0"><span class="toc-number">3.7.</span> <span class="toc-text">waitpid函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%88%E6%AD%A2exit-exit"><span class="toc-number">3.8.</span> <span class="toc-text">进程的终止exit&#x2F;_exit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E6%B8%85%E7%90%86atexit"><span class="toc-number">3.9.</span> <span class="toc-text">进程退出清理atexit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E2%80%93vfork%E5%87%BD%E6%95%B0"><span class="toc-number">3.10.</span> <span class="toc-text">进程的创建–vfork函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%88%B6%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%AB%E5%90%8C%E4%B8%80%E5%9D%97%E7%A9%BA%E9%97%B4-vfork%E5%88%9B%E5%BB%BA"><span class="toc-number">3.11.</span> <span class="toc-text">子进程和父进程共享同一块空间(&#x3D;vfork创建)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vfork-%E4%B8%8E-fork%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.12.</span> <span class="toc-text">vfork 与 fork的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%9B%BF%E6%8D%A2exec"><span class="toc-number">3.13.</span> <span class="toc-text">进程的替换exec</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#system%E5%87%BD%E6%95%B0"><span class="toc-number">3.14.</span> <span class="toc-text">system函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#system-%E4%B8%8E-exec-%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-number">3.14.1.</span> <span class="toc-text">system 与 exec 的区别与相同点</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/05/Linux-C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Linux C学习笔记">Linux C学习笔记</a><time datetime="2024-11-05T11:33:22.000Z" title="Created 2024-11-05 19:33:22">2024-11-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/04/hello-world/" title="Hello hexo">Hello hexo</a><time datetime="2024-11-04T12:51:49.686Z" title="Created 2024-11-04 20:51:49">2024-11-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By MegaV</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

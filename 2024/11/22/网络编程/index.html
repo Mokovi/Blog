@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>网络编程 | MegaV的博客</title><meta name="author" content="MegaV"><meta name="copyright" content="MegaV"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="参考博客：https:&#x2F;&#x2F;blog.csdn.net&#x2F;Royalic&#x2F;article&#x2F;details&#x2F;119985591 参考博客：https:&#x2F;&#x2F;blog.csdn.net&#x2F;wananxuexihu&#x2F;article&#x2F;details&#x2F;140935835 计算机网络概述计算机网络的分类 按覆盖范围分类： 个域网（PAN）：覆盖范围一般在10米半径以内，在便携式消费电器与通信设备之间进行短距离通信的网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络编程">
+<meta property="og:url" content="https://gamma.fra1.zeabur.app/2024/11/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="MegaV的博客">
+<meta property="og:description" content="参考博客：https:&#x2F;&#x2F;blog.csdn.net&#x2F;Royalic&#x2F;article&#x2F;details&#x2F;119985591 参考博客：https:&#x2F;&#x2F;blog.csdn.net&#x2F;wananxuexihu&#x2F;article&#x2F;details&#x2F;140935835 计算机网络概述计算机网络的分类 按覆盖范围分类： 个域网（PAN）：覆盖范围一般在10米半径以内，在便携式消费电器与通信设备之间进行短距离通信的网">
+<meta property="og:locale">
+<meta property="og:image" content="https://gamma.fra1.zeabur.app/img/user.jpg">
+<meta property="article:published_time" content="2024-11-22T02:07:53.000Z">
+<meta property="article:modified_time" content="2024-11-22T06:50:56.190Z">
+<meta property="article:author" content="MegaV">
+<meta property="article:tag" content="Internet Computer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gamma.fra1.zeabur.app/img/user.jpg"><link rel="shortcut icon" href="/img/blog.png"><link rel="canonical" href="https://gamma.fra1.zeabur.app/2024/11/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网络编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-22 14:50:56',
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">MegaV的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">网络编程</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">网络编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-22T02:07:53.000Z" title="Created 2024-11-22 10:07:53">2024-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-22T06:50:56.190Z" title="Updated 2024-11-22 14:50:56">2024-11-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Royalic/article/details/119985591">https://blog.csdn.net/Royalic/article/details/119985591</a></p>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wananxuexihu/article/details/140935835">https://blog.csdn.net/wananxuexihu/article/details/140935835</a></p>
+<h1 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h1><h2 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a><strong>计算机网络的分类</strong></h2><ol>
+<li><strong>按覆盖范围分类</strong>：<ul>
+<li><strong>个域网（PAN）</strong>：覆盖范围一般在10米半径以内，在便携式消费电器与通信设备之间进行短距离通信的网络，如蓝牙耳机等</li>
+<li><strong>局域网（LAN）</strong>：覆盖范围小，通常局限于单一建筑物或校园，如以太网。</li>
+<li><strong>城域网（MAN）</strong>：覆盖范围较大，通常跨越城市范围，例如城域网光纤网络。</li>
+<li><strong>广域网（WAN）</strong>：覆盖范围最广，连接不同城市甚至国家的网络，如互联网。</li>
+</ul>
+</li>
+<li><strong>按拓扑结构分类</strong>：<ul>
+<li><strong>总线型</strong>：所有节点通过共享一条总线连接，常用于早期以太网。</li>
+<li><strong>星型</strong>：所有设备通过交换机或集线器连接，常见于现代网络。</li>
+<li><strong>环型</strong>：节点依次连接成闭环结构，如FDDI。</li>
+<li><strong>网状型</strong>：节点间通过多条链路连接，具备高可靠性和冗余性。</li>
+</ul>
+</li>
+<li><strong>按使用者分类</strong>：<ul>
+<li><strong>公用网络</strong>：供公众使用的网络，如4G&#x2F;5G网络。</li>
+<li><strong>专用网络</strong>：为特定组织或企业服务的网络，如企业内部网络（Intranet）。</li>
+</ul>
+</li>
+<li><strong>按传输方式分类</strong>：<ul>
+<li><strong>电路交换网络</strong>：如传统电话网络。</li>
+<li><strong>分组交换网络</strong>：如互联网，数据以分组形式传输。</li>
+</ul>
+</li>
+</ol>
+<h2 id="计算机网络的层次"><a href="#计算机网络的层次" class="headerlink" title="计算机网络的层次"></a><strong>计算机网络的层次</strong></h2><p><img src="/../source_img/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.asset/1.png"></p>
+<ol>
+<li><strong>OSI参考模型</strong>（七层结构）：<ul>
+<li>应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。</li>
+<li>每层完成特定的功能，从高层的用户服务到低层的硬件传输。</li>
+</ul>
+</li>
+<li><strong>TCP&#x2F;IP模型</strong>（四层结构）：<ul>
+<li>应用层、传输层、网络层、网络接口层。</li>
+<li>是互联网的基础模型，实际应用广泛。</li>
+</ul>
+</li>
+</ol>
+<p><img src="/../source_img/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.asset/2.png"></p>
+<ol start="3">
+<li><p><strong>实际应用中的三层模型</strong>：</p>
+<ul>
+<li><p><strong>接入层</strong>：实现终端接入。</p>
+</li>
+<li><p><strong>汇聚层</strong>：实现局部数据处理与转发。</p>
+</li>
+<li><p><strong>核心层</strong>：实现高性能的数据交换。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a><strong>计算机网络性能指标</strong></h2><ol>
+<li><strong>带宽</strong>：单位时间内最大传输数据量，通常以bps表示。</li>
+<li><strong>延迟</strong>：数据从源到目的地的时间，分为传播延迟、传输延迟、排队延迟和处理延迟。</li>
+<li><strong>往返时间RTT</strong>：数据报文在端到端通信中的来回一次的时间</li>
+<li><strong>吞吐量</strong>：单位时间内成功传输的数据量，是实际带宽的体现。</li>
+<li><strong>丢包率</strong>：传输过程中丢失数据分组的比例，影响网络可靠性。</li>
+</ol>
+<h2 id="互联网的构成"><a href="#互联网的构成" class="headerlink" title="互联网的构成"></a>互联网的构成</h2><p><strong>网络边缘</strong>：位于互联网边缘与互联网相连的计算机和其他设备,如桌面计算机、移动计算机、服务器、其他智能终端设备<br><strong>网络核心</strong>：由互联端系统的分组交换设备和通信链路构成的网状网络。如：分组交换路由器、链路层交换机、通信链路(光纤、铜缆、无线电、激光链路)</p>
+<h2 id="接入网"><a href="#接入网" class="headerlink" title="接入网"></a>接入网</h2><p>接入网的用途是将主机连接到边缘路由器上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">边缘路由器是端系统Host去往任何其他远程端系统的路径上的第一台路由器。各种异构网络通过边缘路由器接入。</span><br></pre></td></tr></table></figure>
+
+<p><strong>接入网分类</strong>：</p>
+<ul>
+<li>光纤到户FTTH</li>
+<li>数字用户线DSL</li>
+<li>同轴电缆</li>
+<li>无线接入</li>
+<li>企业和家庭网络</li>
+</ul>
+<h2 id="网络核心的两大功能"><a href="#网络核心的两大功能" class="headerlink" title="网络核心的两大功能"></a>网络核心的两大功能</h2><ul>
+<li><p><strong>路由</strong>：确定数据分组从源到目标所使用的路径（全局操作）</p>
+</li>
+<li><p><strong>转发</strong>：路由器或交换机将接收到的数据分组转发出去（即移动到该设备的某个输出接口）（本地操作）</p>
+</li>
+</ul>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h2 id="物理层的作用"><a href="#物理层的作用" class="headerlink" title="物理层的作用"></a><strong>物理层的作用</strong></h2><p> 物理层是计算机网络的最底层，主要作用是为数据链路层提供透明的、可靠的比特传输服务。它定义了网络设备如何通过各种物理媒体（如电缆、光纤、无线电波等）传输比特流，涉及信号的物理特性、传输媒介的规范、以及接口的标准化。<br> 具体来说：</p>
+<ol>
+<li><strong>传输比特流</strong>：将上层数据封装为电信号、光信号或无线电波，并在物理媒介上传输。</li>
+<li><strong>媒介的规范和接口</strong>：规定物理连接的属性（如插口形状、信号电平、电缆类型等）。</li>
+<li><strong>同步和复用</strong>：支持信号同步（时钟）、复用技术（如时分复用、频分复用）。</li>
+<li><strong>错误检测</strong>：通过硬件机制检测物理层的信号损坏和传输错误。</li>
+</ol>
+<p>简而言之，物理层的目标是确保设备间比特流能够正确传输，并在各种物理媒介上保持可操作性和一致性。</p>
+<hr>
+<h2 id="物理层设备"><a href="#物理层设备" class="headerlink" title="物理层设备"></a><strong>物理层设备</strong></h2><ol>
+<li><strong>中继器（Repeater）</strong><ul>
+<li>主要功能：再生和放大信号，以延长信号传输距离。(由于存在损耗, 在线路上传输的信号功率会逐渐衰减,衰减到一定程度时将造成信号失真,因此会导致接收错误。中继器就是为解决这一问题而设计的。它完成物理线路的连接,对衰减的信号进行放大,保持与原数据相同)</li>
+<li>特点：<ul>
+<li>只能连接两个同一协议的网络段。</li>
+<li>不隔离冲突域，不隔离广播域。</li>
+<li>遵循 <strong>5-4-3规则</strong>：在10BASE-5以太网中，一个网络最多可以使用5个网络段连接，其中最多4个中继器串联，且只有3个段可用于主机连接，其余2个为中继器间的连接。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>集线器（Hub）</strong><ul>
+<li>主要功能：多端口中继器，负责接收来自一个端口的信号并广播到所有其他端口。</li>
+<li>特点：<ul>
+<li>工作在半双工模式下，所有端口共享一个冲突域。</li>
+<li>无法隔离冲突域和广播域，网络规模较大时容易产生冲突和广播风暴。</li>
+<li>在现代网络中逐渐被交换机取代。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="信道的基本概念"><a href="#信道的基本概念" class="headerlink" title="信道的基本概念"></a><strong>信道的基本概念</strong></h2><p>信道是物理层传输信息的媒介，是一条通信线路中用于特定方向信息传递的部分。通信信道通常包括以下类型：</p>
+<ol>
+<li><strong>单工通信信道（Simplex Channel）</strong><ul>
+<li>特点：只能实现单向通信，即一方只能发送，另一方只能接收。</li>
+<li>示例：广播电视的信号传输。</li>
+</ul>
+</li>
+<li><strong>半双工通信信道（Half-Duplex Channel）</strong><ul>
+<li>特点：双方可以交替发送和接收数据，但同一时刻只能完成一个方向的通信。</li>
+<li>示例：对讲机通信。</li>
+</ul>
+</li>
+<li><strong>全双工通信信道（Full-Duplex Channel）</strong><ul>
+<li>特点：双方可以同时进行数据的发送和接收，提高通信效率。</li>
+<li>示例：电话通信、现代以太网通信。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="物理层常见传输介质"><a href="#物理层常见传输介质" class="headerlink" title="物理层常见传输介质"></a><strong>物理层常见传输介质</strong></h2><ol>
+<li><strong>导向介质</strong><ul>
+<li><strong>双绞线</strong>：价格低廉，传输距离有限，适合局域网。</li>
+<li><strong>同轴电缆</strong>：抗干扰能力强，适合较远距离。</li>
+<li><strong>光纤</strong>：传输速率高，信号衰减小，适合远距离和高速网络。</li>
+</ul>
+</li>
+<li><strong>非导向介质</strong><ul>
+<li><strong>无线电波</strong>：适用于无线局域网（Wi-Fi）。</li>
+<li><strong>微波</strong>：适用于远距离传输，如卫星通信。</li>
+<li><strong>红外线</strong>：短距离设备间通信，如遥控器。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="信道复用"><a href="#信道复用" class="headerlink" title="信道复用"></a>信道复用</h2><p><strong>概念</strong>：<br> 复用（Multiplexing）是一种通信技术，允许多个用户共享同一信道进行通信，从而降低成本、提高信道利用率。</p>
+<h3 id="复用技术分类"><a href="#复用技术分类" class="headerlink" title="复用技术分类"></a>复用技术分类</h3><ol>
+<li><p><strong>频分复用（FDM）</strong></p>
+<ul>
+<li>将整个信道的频带分为多个子频带，每个用户在通信过程中占用一个固定的频带资源。</li>
+<li>特点：所有用户在同一时间占用不同的频率带宽资源。</li>
+</ul>
+</li>
+<li><p><strong>时分复用（TDM）</strong></p>
+<ul>
+<li>将时间划分为一段段等长的时分复用帧（TDM帧），每个用户在帧中占用固定的时隙。</li>
+<li>特点：所有用户在不同时间占用相同的带宽资源。</li>
+</ul>
+<p><img src="/../source_img/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.asset/3.png"></p>
+</li>
+<li><p><strong>波分复用（WDM）</strong></p>
+<ul>
+<li>光的频分复用，通过一根光纤同时传输多个光载波信号。</li>
+</ul>
+</li>
+<li><p><strong>码分复用（CDM）</strong></p>
+<ul>
+<li>各用户使用经过特殊挑选的不同码型，因此彼此之间不会产生干扰。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><p>&#9;数据链路层在物理层提供的服务的基础上向网络层提供服务，其最基本的服务是将源自网络层来的数据可靠地传输到相邻节点的目标机网络层。<strong>数据链路层在不可靠的物理介质上提供可靠的传输。</strong></p>
+<hr>
+<h2 id="数据链路层的作用"><a href="#数据链路层的作用" class="headerlink" title="数据链路层的作用"></a><strong>数据链路层的作用</strong></h2><ol>
+<li><strong>物理地址寻址</strong>：使用 MAC 地址来标识网络中的设备，保证数据帧能够准确到达目的节点。</li>
+<li><strong>数据成帧</strong>：将网络层传输的数据（数据包）封装为帧，并在帧头和帧尾添加必要的控制信息。</li>
+<li><strong>流量控制</strong>：防止发送方过快地发送数据，导致接收方来不及处理。</li>
+<li><strong>差错控制</strong>：检测并修正数据传输中的错误（如奇偶校验、CRC）。</li>
+<li><strong>透明传输</strong>：通过转义字符技术，实现对特殊控制字符的正确处理，使帧内容不受干扰。</li>
+<li><strong>重传机制</strong>：当帧未能正确传输时，启动自动重传请求（ARQ），提高数据传输的可靠性。</li>
+</ol>
+<h2 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a><strong>封装成帧</strong></h2><p><strong>帧</strong>是数据链路层的基本传输单位，包含以下部分：</p>
+<ol>
+<li><strong>帧头</strong>：包含目的地址、源地址和其他控制信息，用于标识和管理帧传输。</li>
+<li><strong>数据字段</strong>：封装上层协议数据包，通常长度为 46 至 1500 字节（以太网）。</li>
+<li><strong>帧尾</strong>：通常用于差错检测（如 CRC）。</li>
+</ol>
+<p><img src="/../source_img/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.asset/4.png"></p>
+<h2 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a><strong>透明传输</strong></h2><p>透明传输的核心思想是：</p>
+<ul>
+<li>使帧数据中的控制字符（如帧边界标识符）被视为普通数据而不影响传输。</li>
+<li>实现方法：在控制字符前插入转义字符 <code>ESC</code>，接收方通过识别 <code>ESC</code> 来正确处理数据。</li>
+</ul>
+<p><img src="/../source_img/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.asset/5.png"></p>
+<h2 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a><strong>差错检测</strong></h2><p>数据链路层通过以下机制检测并处理传输中的错误：</p>
+<ol>
+<li><strong>奇偶校验码</strong><ul>
+<li>在数据末尾附加一个比特位，使整个数据的 1 的个数为奇数或偶数。</li>
+<li>局限性：无法检测偶数位出错。</li>
+</ul>
+</li>
+<li><strong>循环冗余校验码（CRC）</strong><ul>
+<li>使用多项式生成校验码，能有效检测多位错误。</li>
+<li>被广泛应用于以太网帧的错误检测。</li>
+</ul>
+</li>
+</ol>
+<h2 id="最大传输单元MTU"><a href="#最大传输单元MTU" class="headerlink" title="最大传输单元MTU"></a>最大传输单元MTU</h2><p>最大传输单元<code>MTU</code>(<code>Maximum Transmission Unit</code>)，数据链路层的数据帧不是无限大的，数据帧长度受<code>MTU</code>限制.</p>
+<p>路径<code>MTU</code>：由链路中<code>MTU</code>的最小值决定。</p>
+<h2 id="以太网协议详解"><a href="#以太网协议详解" class="headerlink" title="以太网协议详解"></a>以太网协议详解</h2><p><img src="/../source_img/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.asset/6.png"></p>
+<p><code>MAC地址</code>：每一个设备都拥有唯一的MAC地址，共48位，使用十六进制表示。</p>
+<p>以太网协议：是一种使用广泛的局域网技术，是一种应用于数据链路层的协议，使用以太网可以完成<strong>相邻设备</strong>的数据帧传输：</p>
+<p><strong>以太网帧结构</strong>：</p>
+<ul>
+<li>类型：标识上层协议（2字节）</li>
+<li>目的地址和源地址：MAC地址（每个6字节）</li>
+<li>数据：封装的上层协议的分组（46~1500字节）</li>
+<li>CRC：循环冗余码（4字节）</li>
+<li>以太网最短帧：以太网帧最短64字节；以太网帧除了数据部分18字节；数据最短46字节；</li>
+</ul>
+<p><strong>MAC地址</strong>（物理地址、局域网地址）</p>
+<ul>
+<li>MAC地址长度为6字节，48位；</li>
+<li>MAC地址具有唯一性，每个网络适配器对应一个MAC地址；</li>
+<li>通常采用十六进制表示法，每个字节表示一个十六进制数，用 - 或 : 连接起来；</li>
+<li>MAC广播地址：FF-FF-FF-FF-FF-FF。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://gamma.fra1.zeabur.app">MegaV</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://gamma.fra1.zeabur.app/2024/11/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">https://gamma.fra1.zeabur.app/2024/11/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a href="null">null</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Internet-Computer/">Internet Computer</a></div><div class="post-share"><div class="social-share" data-image="/img/user.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/11/05/Linux-C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Linux C学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Linux C学习笔记</div></div><div class="info-2"><div class="info-item-1">进程概述进程的定义1.程序和进程的区别：  ​	程序：是静态的，存放在磁盘上的可执行文件  ​	进程：是动态的，是运行在内存中的程序的执行实例 ​	程序是一些指令的有序集合，而进程是程序执行的过程，进程是程序的一次执行过程。 进程的状态是变化的，其包括进程的创建、调度和消亡。 当程序运行时，其就是进程，程序每运行一次，就会创建一个进程。在linux系统中，进程是管理事务的基本单元。 进程拥有自己独立的处理环境和系统资源（处理器、存储器、I&#x2F;O设备、数据、程序）。 2.进程的状态及转换 进程整个生命周期可以简单划分为三种状态：  ​	就绪态： 进程已经具备执行的一切条件，正在等待分配CPU的处理时间。  ​	执行态： 该进程正在占用CPU运行。  ​	等待态：...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/user.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">MegaV</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Mokovi" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:m1447687747@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">计算机网络概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">计算机网络的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B1%82%E6%AC%A1"><span class="toc-number">1.2.</span> <span class="toc-text">计算机网络的层次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.3.</span> <span class="toc-text">计算机网络性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">1.4.</span> <span class="toc-text">互联网的构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-number">1.5.</span> <span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83%E7%9A%84%E4%B8%A4%E5%A4%A7%E5%8A%9F%E8%83%BD"><span class="toc-number">1.6.</span> <span class="toc-text">网络核心的两大功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">2.</span> <span class="toc-text">物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.</span> <span class="toc-text">物理层的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-number">2.2.</span> <span class="toc-text">物理层设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.3.</span> <span class="toc-text">信道的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E5%B8%B8%E8%A7%81%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8"><span class="toc-number">2.4.</span> <span class="toc-text">物理层常见传输介质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8"><span class="toc-number">2.5.</span> <span class="toc-text">信道复用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB"><span class="toc-number">2.5.1.</span> <span class="toc-text">复用技术分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">3.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">数据链路层的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="toc-number">3.2.</span> <span class="toc-text">封装成帧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="toc-number">3.3.</span> <span class="toc-text">透明传输</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B"><span class="toc-number">3.4.</span> <span class="toc-text">差错检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%A0%E8%BE%93%E5%8D%95%E5%85%83MTU"><span class="toc-number">3.5.</span> <span class="toc-text">最大传输单元MTU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.6.</span> <span class="toc-text">以太网协议详解</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/22/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="网络编程">网络编程</a><time datetime="2024-11-22T02:07:53.000Z" title="Created 2024-11-22 10:07:53">2024-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/05/Linux-C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Linux C学习笔记">Linux C学习笔记</a><time datetime="2024-11-05T11:33:22.000Z" title="Created 2024-11-05 19:33:22">2024-11-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/04/hello-world/" title="Hello hexo">Hello hexo</a><time datetime="2024-11-04T12:51:49.686Z" title="Created 2024-11-04 20:51:49">2024-11-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By MegaV</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
